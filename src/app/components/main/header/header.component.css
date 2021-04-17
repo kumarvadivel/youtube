@@ -1,0 +1,24 @@
+header{
+    position: sticky;
+    height:8vh;
+    background:#212121;
+    color:white;
+    padding: 2vh 3vh;
+}
+.branding{
+    margin-top: -5px;
+}
+.branding-main{
+    height: 100%;
+    width: 6vw;
+    align-items: flex-start;
+}
+.fill-w{
+    fill: white;
+}
+.logo-area{
+    width: 68%;
+}
+li{
+    list-style: none;
+}

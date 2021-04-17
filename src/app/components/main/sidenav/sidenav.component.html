@@ -1,0 +1,63 @@
+<div class="sidenav-wrapper">
+    <!-- sidenav full open -->
+    <div>
+        <div class="main-sidenav">
+            <ul>
+                <li *ngFor="let sidenav of mainsidenavs">
+                    <span [innerHTML]="sidenav.icon">
+                        
+                    </span>
+                    <span>{{sidenav.option}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="seperator"></div>
+        <div class="sub-sidenav">
+            <ul>
+                <li *ngFor="let sidenav of subsidenav1">
+                    <span [innerHTML]="sidenav.icon"></span>
+                    <span>{{sidenav.option}}</span>
+                </li>
+                <ng-container *ngIf="showsubsidenav2">
+                    <li *ngFor="let sidenav of subsidenav2" >
+                        <span [innerHTML]="sidenav.icon"></span>
+                        <span>{{sidenav.option}}</span>
+                    </li>
+                </ng-container>
+                
+                <li>
+                    <div class="showmore" *ngIf="!showsubsidenav2" (click)="sub2toggle()">
+                        <span class="material-icons">
+                            expand_more
+                        </span>
+                        <span>
+                            Show more
+                        </span>
+                    </div>
+                    <div class="showmore" *ngIf="showsubsidenav2" (click)="sub2toggle()">
+                        <span class="material-icons">
+                            expand_less
+                        </span>
+                        <span>
+                            Show less
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="seperator"></div>
+        <div class="subscriptions-sidenav">
+            <div class="title">
+                <span>Subscriptions</span>
+            </div>
+            <div>
+                <ul>
+                    <li *ngFor="let subscription of subscriptions">
+                        <img src='{{"/assets/images/"+subscription.icon+".jpeg"}}'/>
+                        <span>{{subscription.option}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
